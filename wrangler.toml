@@ -3,4 +3,5 @@ type = "javascript"
 account_id = "1eb16bedea77ece294e63cb7e30ab763"
 workers_dev = true
 zone_id = "ffe278e6e435ac15bbf261726b407816"
+compatibility_date = "2025-02-09"
 main = "src/index.js"  # Adjust this if your main script has a different path
