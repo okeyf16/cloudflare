@@ -1,4 +1,4 @@
-name = "my-cloudflare-worker"  # Change this to your worker name
+name = "cloudflare"  # Change this to your worker name
 type = "javascript"
 account_id = "1eb16bedea77ece294e63cb7e30ab763"
 workers_dev = true
