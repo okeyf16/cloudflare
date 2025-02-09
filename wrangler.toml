@@ -1,0 +1,7 @@
+name = "my-cloudflare-worker"  # Change this to your worker name
+type = "javascript"
+account_id = "your-account-id"
+workers_dev = true
+route = ""
+zone_id = ""
+main = "src/index.js"  # Adjust this if your main script has a different path
