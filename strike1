@@ -1,0 +1,21 @@
+addEventListener("fetch", event => {
+    event.respondWith(doRedirects(event.request));
+});
+
+const newLocation = "https://developers.cloudflare.com/workers/about/";
+
+async function doRedirects(request) {
+    let reqUA = request.headers.get("user-agent") || "";
+    let cookies = request.headers.get("cookie") || "";
+
+    // Check if the request is from curl
+    if (reqUA.toLowerCase().includes("curl")) {
+        // Check if the "cf-noredir=true" cookie is present
+        if (cookies.includes("cf-noredir=true")) {
+            return fetch(request); // Allow request without redirect
+        }
+        return Response.redirect(newLocation, 302);
+    }
+
+    return fetch(request);
+}
